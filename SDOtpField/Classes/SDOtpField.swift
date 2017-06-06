@@ -238,7 +238,7 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
                         textField.endEditing(true)
                         //send call back
                         if let del = self.delegate{
-                            del.otpField(field: self, didEnter: currentOtp)
+                            del.otpField?(field: self, didEnter: currentOtp)
                         }
                     }
                 }
@@ -276,7 +276,7 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
                     textField.isEnabled = true
                     //send call back : OTP FILLED
                     if let del = self.delegate{
-                        del.otpField(field: self, didEnter: currentOtp)
+                        del.otpField?(field: self, didEnter: currentOtp)
                     }
                 }
                 break
