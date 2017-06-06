@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SDOtpField_Example' do
+  pod 'SDOtpField', :path => '../'
+
+  target 'SDOtpField_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
