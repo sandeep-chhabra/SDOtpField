@@ -179,7 +179,7 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
     
     
 //MARK: Clear text
-    func clearOTPText() -> Void {
+ public func clearOTPText() -> Void {
         for n in 1...numberOfDigits{
             let txtFld = self.viewWithTag(220+n) as! UITextField?
             txtFld?.text = ""
