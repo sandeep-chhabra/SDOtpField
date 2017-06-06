@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5766C06960548AF0BC9F1079B296E0CBDF71D1BB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5766C06960548AF0BC9F1079B296E0CBDF71D1BB" : 9223372036854775807,
+    "E9A16D928194FD5DF7F768DE48F1E0D3A2428EDE" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8343E268-F384-4E78-A4A1-EBA8DFA403CB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5766C06960548AF0BC9F1079B296E0CBDF71D1BB" : "SDOtpField\/",
+    "E9A16D928194FD5DF7F768DE48F1E0D3A2428EDE" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SDOtpField",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/SDOtpField.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sandeep-chhabra\/SDOtpField.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5766C06960548AF0BC9F1079B296E0CBDF71D1BB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sandeep-chhabra\/SDSegmentController.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E9A16D928194FD5DF7F768DE48F1E0D3A2428EDE"
+    }
+  ]
+}

@@ -33,7 +33,7 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
 //TODO: CHECK PROPERTIES DO NOT OVERRIDE - ADD TEXT FIELDS AFTER PARENT VIEW DID LOAD ?
 //TODO: Add method to set text and reset last text on reload
 
-    var currentOtp:String {
+ public   var currentOtp:String {
         get{
             var str = ""
             
@@ -46,32 +46,32 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
         }
     }
     
-    var numberOfDigits = 6
-    var fieldMargin:CGFloat = 5
-    var fieldCornerRadius:CGFloat = 0//8
-    var fieldHeight:CGFloat = 0
-    var fieldWidth:CGFloat = 0
+ public   var numberOfDigits = 6
+ public   var fieldMargin:CGFloat = 5
+ public   var fieldCornerRadius:CGFloat = 0//8
+ public   var fieldHeight:CGFloat = 0
+  public  var fieldWidth:CGFloat = 0
     
-    var fieldBackgroundColor : UIColor = UIColor.white
+  public  var fieldBackgroundColor : UIColor = UIColor.white
 //    var selectedBackgroundColor : UIColor = UIColor.gray
 
-    var fieldBorderColor = UIColor.lightGray
+  public  var fieldBorderColor = UIColor.lightGray
     
-    var fieldKeyboardType = UIKeyboardType.numberPad
+  public  var fieldKeyboardType = UIKeyboardType.numberPad
     
-   weak var delegate:SDOtpFieldDelegate?
+ public  weak var delegate:SDOtpFieldDelegate?
     
-    var allowsSelection : Bool = false
+ public   var allowsSelection : Bool = false
     
-    var fieldsAdjustHeightToFit = false
+ public   var fieldsAdjustHeightToFit = false
     
-    var fieldShape : FieldShape = .square
+ public   var fieldShape : FieldShape = .square
     
-    var secureTextEnabled = false
+ public   var secureTextEnabled = false
     
-    var fieldFont = UIFont.systemFont(ofSize: 15)
+ public   var fieldFont = UIFont.systemFont(ofSize: 15)
     
-    var fieldTextColor = UIColor.black
+ public   var fieldTextColor = UIColor.black
     
     /*
     // Only override draw() if you perform custom drawing.
@@ -81,7 +81,7 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
     }
     */
     
-    override func awakeFromNib() {
+  public  override func awakeFromNib() {
         super.awakeFromNib()
         
         self.addTarget(self, action: #selector(touch), for: .touchUpInside)
@@ -138,7 +138,7 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
     
     
 //MARK: Method to reload contents
-    func reloadFields() -> Void {
+ public   func reloadFields() -> Void {
         
         DispatchQueue.main.async {
             for  vu in self.subviews{
@@ -189,24 +189,24 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
     
     
 //MARK: UITextFieldDelegate
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+   public func textFieldDidBeginEditing(_ textField: UITextField) {
         
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    public func textFieldDidEndEditing(_ textField: UITextField) {
         NSLog("textfield end editing")
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+   public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return false
     }
     
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+   public func textFieldShouldClear(_ textField: UITextField) -> Bool {
         NSLog("textfield should clear")
         return true
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+   public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
        // let replacedText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
 

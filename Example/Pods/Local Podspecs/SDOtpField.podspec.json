@@ -1,8 +1,8 @@
 {
   "name": "SDOtpField",
   "version": "0.1.0",
-  "summary": "A short description of SDOtpField.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "SDOtpField is a segmented text field with limited number of input characters.",
+  "description": "SDOtpField is a segmented text field with limited number of input characters.\nSDOtpField allows user to enter only one character in each filed just like views used used in most of the apps to verify OTP.",
   "homepage": "https://github.com/sandeep-chhabra/SDOtpField",
   "license": {
     "type": "MIT",
