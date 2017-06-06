@@ -10,15 +10,19 @@ import UIKit
 
 import SDOtpField
 
-class DisplayViewController: UIViewController {
+class DisplayViewController: UIViewController,SDOtpFieldDelegate {
 
     @IBOutlet weak var displayLabel: UILabel!
-    @IBOutlet weak var otpField: SDOtpField!
    
+    @IBOutlet weak var otpField: SDOtpField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        otpField.numberOfDigits = 6
+        otpField.reloadFields()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +32,13 @@ class DisplayViewController: UIViewController {
     
 
     @IBAction func getResults(_ sender: Any) {
+        displayLabel.text = otpField.currentOtp
+    }
+    
+    
+    //MARK : - SDOtpFieldDelegate
+    func otpField(field: UIControl, didEnter otp: String) {
+        
     }
     /*
     // MARK: - Navigation
