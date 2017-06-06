@@ -1,0 +1,16 @@
+PODS:
+  - SDOtpField (0.1.0)
+
+DEPENDENCIES:
+  - SDOtpField (from `../`)
+
+EXTERNAL SOURCES:
+  SDOtpField:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SDOtpField: 4eca07673ab00a1aa5e76d5a9922fd787ef929e5
+
+PODFILE CHECKSUM: 5133fc35582343931fa4a0923b9b0eace2e87fb7
+
+COCOAPODS: 1.2.1

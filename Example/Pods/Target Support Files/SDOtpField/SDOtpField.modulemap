@@ -1,0 +1,6 @@
+framework module SDOtpField {
+  umbrella header "SDOtpField-umbrella.h"
+
+  export *
+  module * { export * }
+}

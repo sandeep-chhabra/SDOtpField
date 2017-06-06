@@ -1,0 +1,6 @@
+framework module Pods_SDOtpField_Tests {
+  umbrella header "Pods-SDOtpField_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

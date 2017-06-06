@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3179D260FAB210964F977BD7 /* Pods_SDOtpField_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AF038557D8C97ADD7359F3 /* Pods_SDOtpField_Tests.framework */; };
+		4A84E4DF1EE6F58800B13F17 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84E4DE1EE6F58800B13F17 /* DisplayViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -28,11 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2112EC96B7C0F37D6A8C71EA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2112EC96B7C0F37D6A8C71EA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		28AF038557D8C97ADD7359F3 /* Pods_SDOtpField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOtpField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		391DDDD881E31F78839A0792 /* Pods_SDOtpField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOtpField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		420865A3CDE2D43DFCA92A16 /* Pods-SDOtpField_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOtpField_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOtpField_Example/Pods-SDOtpField_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		514AC580921589C601AAF69F /* SDOtpField.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SDOtpField.podspec; path = ../SDOtpField.podspec; sourceTree = "<group>"; };
+		4A84E4DE1EE6F58800B13F17 /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
+		514AC580921589C601AAF69F /* SDOtpField.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SDOtpField.podspec; path = ../SDOtpField.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SDOtpField_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDOtpField_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		675A39FD698CB4485CD26CBE /* Pods-SDOtpField_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOtpField_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDOtpField_Tests/Pods-SDOtpField_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8D4FCE471781F46287E02AF6 /* Pods-SDOtpField_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOtpField_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOtpField_Tests/Pods-SDOtpField_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA30ACE431E2977A16C9FCC6 /* Pods-SDOtpField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOtpField_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDOtpField_Example/Pods-SDOtpField_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C1ECA5ED6EA290763C429DA8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C1ECA5ED6EA290763C429DA8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				4A84E4DE1EE6F58800B13F17 /* DisplayViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -362,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				4A84E4DF1EE6F58800B13F17 /* DisplayViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

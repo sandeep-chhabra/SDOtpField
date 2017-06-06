@@ -1,25 +1,80 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Display View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="DisplayViewController" customModule="SDOtpField_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ztP-8Q-ErE" customClass="SDOtpField" customModule="Pods_SDOtpField_Example">
+                                <rect key="frame" x="54" y="311" width="267" height="44"/>
+                                <color key="backgroundColor" red="0.83233816959999996" green="0.22818080360000001" blue="0.028571428570000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Lxk-TY-9OX"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWr-OK-RRZ">
+                                <rect key="frame" x="130" y="398" width="116" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hBD-gN-Ip7"/>
+                                    <constraint firstAttribute="width" constant="116" id="wD7-6u-t7L"/>
+                                </constraints>
+                                <state key="normal" title="Get">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getResults:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dLl-lM-MB0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkI-5v-vuF">
+                                <rect key="frame" x="54" y="220" width="267" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="cUs-Sg-yNk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dWr-OK-RRZ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="1SZ-Qp-WgI"/>
+                            <constraint firstItem="RkI-5v-vuF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="38" id="61i-wZ-vA1"/>
+                            <constraint firstItem="ztP-8Q-ErE" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="KWl-HG-jIj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ztP-8Q-ErE" secondAttribute="trailing" constant="38" id="VzZ-vu-aaP"/>
+                            <constraint firstItem="RkI-5v-vuF" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ZZu-bV-fEP"/>
+                            <constraint firstItem="dWr-OK-RRZ" firstAttribute="top" secondItem="ztP-8Q-ErE" secondAttribute="bottom" constant="43" id="cBQ-dm-8cF"/>
+                            <constraint firstItem="ztP-8Q-ErE" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="hJF-vZ-upa"/>
+                            <constraint firstItem="ztP-8Q-ErE" firstAttribute="top" secondItem="RkI-5v-vuF" secondAttribute="bottom" constant="53" id="hRm-oK-Dep"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RkI-5v-vuF" secondAttribute="trailing" constant="38" id="hhH-4s-ibS"/>
+                            <constraint firstItem="ztP-8Q-ErE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="38" id="jDO-V0-ckP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="RkI-5v-vuF" id="b3F-Dk-M2Y"/>
+                        <outlet property="otpField" destination="ztP-8Q-ErE" id="qHS-zo-GN3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
