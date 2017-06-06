@@ -15,7 +15,7 @@ class SDTextField: UITextField {
 }
 
 @objc public protocol SDOtpFieldDelegate : class {
-    func otpField(field:UIControl , didEnter otp:String) -> Void
+  @objc optional   func otpField(field:UIControl , didEnter otp:String) -> Void
 }
 
 
