@@ -219,15 +219,15 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
         let startIn = str.index(str.startIndex, offsetBy: range.location)
         let endIn = str.index(startIn, offsetBy: range.length)
         
-        let resultStr = str.replacingCharacters(in:Range(startIn..<endIn) , with: string)
+        let resultStr = str.replacingCharacters(in:(startIn..<endIn) , with: string)
        
 
-        switch (str.characters.count , resultStr.characters.count )
+        switch (str.count , resultStr.count )
         {
             //User enters text when SELECTED textfield is already full THEN REPLACE TEXT : IN CASE OF ALLOWS SELECTION VAR
             case let(count,resultCount) where count == 1 && resultCount > 1 :
             
-                if string.characters.count == 1{
+                if string.count == 1{
                     textField.text = string
                     let resp = self.viewWithTag(textField.tag + 1 )
                     if resp != nil{
