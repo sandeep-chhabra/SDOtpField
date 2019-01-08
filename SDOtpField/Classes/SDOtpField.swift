@@ -159,8 +159,8 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
         let otp = currentOtp
         var selectTag = 1
         
-        if otp.characters.count > 0{
-            selectTag = (otp.characters.count + 1 <= numberOfDigits) ? otp.characters.count + 1 : otp.characters.count
+        if otp.count > 0{
+            selectTag = (otp.count + 1 <= numberOfDigits) ? otp.count + 1 : otp.count
         }
         
         if shouldEdit{
