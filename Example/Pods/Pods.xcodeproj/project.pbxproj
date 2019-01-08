@@ -32,7 +32,7 @@
 /* Begin PBXFileReference section */
 		080CBCF0A84C66BD1642F89E1FEDE929 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C3061F471F8EED9DBC9CDCF981501A6 /* SDOtpField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDOtpField.xcconfig; sourceTree = "<group>"; };
-		0FD0B3B6C61E69C8672C9E46DC515534 /* SDOtpField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDOtpField.framework; path = SDOtpField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FD0B3B6C61E69C8672C9E46DC515534 /* SDOtpField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDOtpField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		265704796D8EBB528EE9977BE71B9EB6 /* Pods-SDOtpField_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SDOtpField_Tests-dummy.m"; sourceTree = "<group>"; };
 		2785E618D6FF9452D5547309D7C34B98 /* Pods-SDOtpField_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SDOtpField_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2B50F09A408BC74B9B1B7848B32C293C /* Pods-SDOtpField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SDOtpField_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -41,25 +41,25 @@
 		3788C3968D7B200924A7C6A3DD3E99BC /* Pods-SDOtpField_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SDOtpField_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3FEE8966098EFC2955EF4D2D79CF4F9A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E9E90DD773D5690C7FD10EEFB0A2150 /* Pods-SDOtpField_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SDOtpField_Example-frameworks.sh"; sourceTree = "<group>"; };
-		51AD20E04F2553A210240B7BDBE6B878 /* Pods_SDOtpField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SDOtpField_Tests.framework; path = "Pods-SDOtpField_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51AD20E04F2553A210240B7BDBE6B878 /* Pods_SDOtpField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOtpField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53267A6B9B2674C3CBCC8EE35124047F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		651F3A2A729AFF235B8F72D1A59CD671 /* Pods-SDOtpField_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SDOtpField_Example-umbrella.h"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6682D6AA65BD75D339C8E97A3F020FDE /* SDOtpField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDOtpField-dummy.m"; sourceTree = "<group>"; };
 		72E7989EF8E284AD9BF6F749898963AC /* Pods-SDOtpField_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SDOtpField_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		80DDE5A847B46AC76E059AB05E9B211E /* Pods-SDOtpField_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SDOtpField_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		82CEDD8F9EFCED3333711951260F26F5 /* Pods-SDOtpField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SDOtpField_Example.modulemap"; sourceTree = "<group>"; };
+		82CEDD8F9EFCED3333711951260F26F5 /* Pods-SDOtpField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SDOtpField_Example.modulemap"; sourceTree = "<group>"; };
 		8552D11D866C7D5D0D93F7E2170B24EC /* Pods-SDOtpField_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SDOtpField_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		85D79E218AC4EF8BA92611F8D08FF183 /* Pods-SDOtpField_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SDOtpField_Example-dummy.m"; sourceTree = "<group>"; };
-		8AD7350A1904844FD83ADAE43C8326CC /* SDOtpField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SDOtpField.modulemap; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8AD7350A1904844FD83ADAE43C8326CC /* SDOtpField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SDOtpField.modulemap; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9CC7CC9318F9E8ABE16FF0902267B28D /* Pods-SDOtpField_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SDOtpField_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B52DA4B3061D92933DA3B2668630EF53 /* Pods-SDOtpField_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SDOtpField_Tests-umbrella.h"; sourceTree = "<group>"; };
-		BB379C9117D5F2CD6204AD562AE24106 /* Pods-SDOtpField_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SDOtpField_Tests.modulemap"; sourceTree = "<group>"; };
+		BB379C9117D5F2CD6204AD562AE24106 /* Pods-SDOtpField_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SDOtpField_Tests.modulemap"; sourceTree = "<group>"; };
 		BE275AAC31613F4FA1FA47F8DD0F8402 /* SDOtpField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SDOtpField.swift; sourceTree = "<group>"; };
 		BE2C43661E072C0E6591AC977B82FB36 /* Pods-SDOtpField_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SDOtpField_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE901BE23A7303EE92D7C5A8560AD951 /* Pods-SDOtpField_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SDOtpField_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C8C4737F1A8E04E958CBD21456EC53A6 /* Pods_SDOtpField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SDOtpField_Example.framework; path = "Pods-SDOtpField_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C4737F1A8E04E958CBD21456EC53A6 /* Pods_SDOtpField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOtpField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9BAF6CCCCA5F4924AFCFF60FF736A6 /* SDOtpField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDOtpField-umbrella.h"; sourceTree = "<group>"; };
 		CFFFB05E6E549E23FC8D45B7595AD793 /* Pods-SDOtpField_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SDOtpField_Tests-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +107,6 @@
 			children = (
 				BE275AAC31613F4FA1FA47F8DD0F8402 /* SDOtpField.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -203,7 +202,6 @@
 			children = (
 				6691AAF90063A479D1E73863641AB5BB /* Classes */,
 			);
-			name = SDOtpField;
 			path = SDOtpField;
 			sourceTree = "<group>";
 		};
@@ -313,7 +311,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 1010;
+				TargetAttributes = {
+					2CC68F3A6D8BE5FCE38D4B2E0CA67791 = {
+						LastSwiftMigration = 1010;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -400,7 +403,8 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -434,7 +438,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -451,23 +456,33 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
@@ -574,22 +589,32 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -603,6 +628,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
