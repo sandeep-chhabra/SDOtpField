@@ -208,7 +208,6 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
     
    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-       // let replacedText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
 
         if string == " "{
             return false
