@@ -26,7 +26,6 @@ class DisplayViewController: UIViewController,SDOtpFieldDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        otpField.reloadFields()
         otpField.becomeFirstResponder()
     }
     override func didReceiveMemoryWarning() {
@@ -37,7 +36,7 @@ class DisplayViewController: UIViewController,SDOtpFieldDelegate {
     @IBAction func getResults(_ sender: Any) {
         displayLabel.text = otpField.currentOtp
         otpField.clearOTPText()
-        otpField.becomeFirstResponder()
+        otpField.resignFirstResponder()
     }
 
 }

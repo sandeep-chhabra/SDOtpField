@@ -31,7 +31,7 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
     //TODO: CHECK PROPERTIES DO NOT OVERRIDE - ADD TEXT FIELDS AFTER PARENT VIEW DID LOAD ?
     //TODO: Add method to set text and reset last text on reload
     
-    public   var currentOtp:String {
+    public var currentOtp:String {
         get{
             var str = ""
             for n in 1...numberOfDigits{
@@ -62,38 +62,43 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
     
     public  weak var delegate:SDOtpFieldDelegate?
     
-    public  override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         self.addTarget(self, action: #selector(touch), for: .touchUpInside)
+        reloadFields()
     }
+    
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        fieldWidth = (self.frame.size.width + fieldMargin)/CGFloat(numberOfDigits) - fieldMargin
+        fieldHeight = fieldsAdjustHeightToFit ? self.frame.size.height : fieldWidth
+        for position in 1...numberOfDigits{
+            if let textField = viewWithTag(220+position) as? SDTextField{
+                textField.frame = CGRect.init(x:(CGFloat(position-1)*fieldWidth)+(fieldMargin*CGFloat(position-1)) , y:0 , width:fieldWidth, height:fieldHeight )
+                textField.center.y = self.convert(self.center, from: self.superview).y
+            }
+        }
+    }
+    
     
     //MARK: Setup Views
     private func addTetxFields() -> Void {
         for n in 1...numberOfDigits{
             if let textField = viewWithTag(220+n) as? SDTextField{
-                setupTextField(textField:textField,position: n)
+                setupTextField(textField:textField)
             }else{
                 let textField = SDTextField.init()
                 textField.delegate = self
                 textField.addTarget(self, action: #selector(txtFieldValueChnged(sender:)), for: .valueChanged)
-                setupTextField(textField:textField,position: n)
+                textField.tag = 220+n
+                setupTextField(textField:textField)
                 self.addSubview(textField)
             }
         }
     }
     
-    private func setupTextField(textField:SDTextField,position:Int){
-        fieldWidth = (self.frame.size.width + fieldMargin)/CGFloat(numberOfDigits) - fieldMargin
-        fieldHeight = fieldsAdjustHeightToFit ? self.frame.size.height : fieldWidth
-        
-        textField.frame = CGRect.init(x:(CGFloat(position-1)*fieldWidth)+(fieldMargin*CGFloat(position-1)) , y:0 , width:fieldWidth, height:fieldHeight )
-        
-        textField.center.y = self.convert(self.center, from: self.superview).y
-        textField.tag = 220+position
+    private func setupTextField(textField:SDTextField){
         textField.backgroundColor = fieldBackgroundColor
-        if allowsSelection == false {
-            textField.isEnabled = (position == 1 ? true : false)
-        }
         textField.textAlignment = NSTextAlignment.center
         textField.layer.masksToBounds = true
         textField.layer.cornerRadius = (fieldShape == .round) ? fieldWidth/2 : fieldCornerRadius
@@ -158,7 +163,9 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
        return super.becomeFirstResponder()
     }
     @discardableResult override public func resignFirstResponder() -> Bool{
-        
+        defer{
+            endEditing(true)
+        }
         return super.resignFirstResponder()
     }
     //MARK: Clear text
@@ -230,7 +237,6 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
                     self.sendActions(for: .valueChanged)
                 }
                 else{
-                    textField.endEditing(true)
                     textField.isEnabled = true
                     //send call back : OTP FILLED
                     if let del = self.delegate{
