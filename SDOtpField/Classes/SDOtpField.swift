@@ -14,10 +14,12 @@ class SDTextField: UITextField {
     }
 }
 
-@objc public protocol SDOtpFieldDelegate : class {
-  @objc optional   func otpField(field:UIControl , didEnter otp:String) -> Void
+public protocol SDOtpFieldDelegate : class {
+    func otpField(field:UIControl , didEnter otp:String) -> Void
 }
-
+public extension SDOtpFieldDelegate{
+    func otpField(field:UIControl , didEnter otp:String){ }
+}
 
 @objc public enum FieldShape:Int {
     case square
@@ -25,20 +27,15 @@ class SDTextField: UITextField {
 }
 
 public class SDOtpField: UIControl,UITextFieldDelegate {
-
-//let lock = NSLock()
-
+    //TODO: selected back ground color, border color
+    //TODO: CHECK PROPERTIES DO NOT OVERRIDE - ADD TEXT FIELDS AFTER PARENT VIEW DID LOAD ?
+    //TODO: Add method to set text and reset last text on reload
     
-//TODO: selected back ground color, border color
-//TODO: CHECK PROPERTIES DO NOT OVERRIDE - ADD TEXT FIELDS AFTER PARENT VIEW DID LOAD ?
-//TODO: Add method to set text and reset last text on reload
-
- public   var currentOtp:String {
+    public   var currentOtp:String {
         get{
             var str = ""
-            
             for n in 1...numberOfDigits{
-                if let txtField = self.viewWithTag(220+n) as! UITextField?{
+                if let txtField = self.viewWithTag(220+n) as? UITextField{
                     str.append((txtField.text != nil) ? txtField.text! : "")
                 }
             }
@@ -46,169 +43,145 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
         }
     }
     
- public   var numberOfDigits = 6
- public   var fieldMargin:CGFloat = 5
- public   var fieldCornerRadius:CGFloat = 0//8
- public   var fieldHeight:CGFloat = 0
-  public  var fieldWidth:CGFloat = 0
+    public  var numberOfDigits = 6
+    public  var fieldMargin:CGFloat = 5
+    public  var fieldCornerRadius:CGFloat = 0
+    public  var fieldHeight:CGFloat = 0
+    public  var fieldWidth:CGFloat = 0
     
-  public  var fieldBackgroundColor : UIColor = UIColor.white
-//    var selectedBackgroundColor : UIColor = UIColor.gray
-
-  public  var fieldBorderColor = UIColor.lightGray
+    public  var fieldBackgroundColor : UIColor = UIColor.white
+    public  var fieldBorderColor = UIColor.lightGray
+    public  var fieldKeyboardType = UIKeyboardType.numberPad
+    public  var allowsSelection = false
+    public  var fieldsAdjustHeightToFit = false
+    public  var fieldShape : FieldShape = .square
+    public  var secureTextEnabled = false
+    public  var fieldFont = UIFont.systemFont(ofSize: 15)
+    public  var fieldTextColor = UIColor.black
+    //var selectedBackgroundColor : UIColor = UIColor.gray
     
-  public  var fieldKeyboardType = UIKeyboardType.numberPad
+    public  weak var delegate:SDOtpFieldDelegate?
     
- public  weak var delegate:SDOtpFieldDelegate?
-    
- public   var allowsSelection : Bool = false
-    
- public   var fieldsAdjustHeightToFit = false
-    
- public   var fieldShape : FieldShape = .square
-    
- public   var secureTextEnabled = false
-    
- public   var fieldFont = UIFont.systemFont(ofSize: 15)
-    
- public   var fieldTextColor = UIColor.black
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
-  public  override func awakeFromNib() {
+    public  override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.addTarget(self, action: #selector(touch), for: .touchUpInside)
-        
-        //NEED LOCK MECHANISAM IN ADD TEXTFIELDS AS 2 LAYERS OF TEXT FIELD CAN BE ADDED IF reloadTextfields() WITHOUT ASYNC IN IT is called from view did load of containing view controller
-        
-//        lock.name = "SDOTPField : Add textfields"
-//        DispatchQueue.main.async {
-//            self.addTetxFields()
-//        }
-        
     }
     
-//MARK: Setup Views
+    //MARK: Setup Views
     private func addTetxFields() -> Void {
-        
-        //LOCK NOT WORKING
-//        lock.lock()
-        
+        for n in 1...numberOfDigits{
+            if let textField = viewWithTag(220+n) as? SDTextField{
+                setupTextField(textField:textField,position: n)
+            }else{
+                let textField = SDTextField.init()
+                textField.delegate = self
+                textField.addTarget(self, action: #selector(txtFieldValueChnged(sender:)), for: .valueChanged)
+                setupTextField(textField:textField,position: n)
+                self.addSubview(textField)
+            }
+        }
+    }
+    
+    private func setupTextField(textField:SDTextField,position:Int){
         fieldWidth = (self.frame.size.width + fieldMargin)/CGFloat(numberOfDigits) - fieldMargin
-
         fieldHeight = fieldsAdjustHeightToFit ? self.frame.size.height : fieldWidth
         
-        for n in 1...numberOfDigits{
-            
-            let textField = SDTextField.init()
-            textField.delegate = self
-            
-            textField.frame = CGRect.init(x:(CGFloat(n-1)*fieldWidth)+(fieldMargin*CGFloat(n-1)) , y:0 , width:fieldWidth, height:fieldHeight )
-            
-            textField.center.y = self.convert(self.center, from: self.superview).y
-            textField.tag = 220+n
-            textField.backgroundColor = fieldBackgroundColor
-            if allowsSelection == false {
-                textField.isEnabled = (n == 1 ? true : false)
-            }
-            
-            textField.textAlignment = NSTextAlignment.center
-            textField.layer.masksToBounds = true
-            textField.layer.cornerRadius = (fieldShape == .round) ? fieldWidth/2 : fieldCornerRadius
-            textField.borderStyle = .roundedRect
-            textField.layer.borderColor = fieldBorderColor.cgColor
-            textField.layer.borderWidth = 1
-            textField.keyboardType = fieldKeyboardType
-            textField.isSecureTextEntry = secureTextEnabled
-            textField.font = fieldFont
-            textField.textColor = fieldTextColor
-            
-            textField.addTarget(self, action: #selector(txtFieldValueChnged(sender:)), for: .valueChanged)
-            self.addSubview(textField)
+        textField.frame = CGRect.init(x:(CGFloat(position-1)*fieldWidth)+(fieldMargin*CGFloat(position-1)) , y:0 , width:fieldWidth, height:fieldHeight )
+        
+        textField.center.y = self.convert(self.center, from: self.superview).y
+        textField.tag = 220+position
+        textField.backgroundColor = fieldBackgroundColor
+        if allowsSelection == false {
+            textField.isEnabled = (position == 1 ? true : false)
         }
-//        lock.unlock()
+        textField.textAlignment = NSTextAlignment.center
+        textField.layer.masksToBounds = true
+        textField.layer.cornerRadius = (fieldShape == .round) ? fieldWidth/2 : fieldCornerRadius
+        textField.borderStyle = .roundedRect
+        textField.layer.borderColor = fieldBorderColor.cgColor
+        textField.layer.borderWidth = 1
+        textField.keyboardType = fieldKeyboardType
+        textField.isSecureTextEntry = secureTextEnabled
+        textField.font = fieldFont
+        textField.textColor = fieldTextColor
     }
-    
-    
-//MARK: Method to reload contents
- public   func reloadFields() -> Void {
-        
-        DispatchQueue.main.async {
-            for  vu in self.subviews{
-                vu.removeFromSuperview()
-            }
-            self.addTetxFields()
-        }
-    }
-    
-    
-//MARK: TOUCH EVENT
-    @objc private func touch() -> Void {
-        self.edit(shouldEdit: true)
-    }
-    
-    func edit(shouldEdit:Bool) -> Void {
-        
-        let otp = currentOtp
-        var selectTag = 1
-        
-        if otp.count > 0{
-            selectTag = (otp.count + 1 <= numberOfDigits) ? otp.count + 1 : otp.count
-        }
-        
-        if shouldEdit{
-            if let vu = self.viewWithTag(220 + selectTag) as! UITextField?{
-                vu.isEnabled = true
-                if !vu.isFirstResponder {
-                    vu.becomeFirstResponder()
+    private func enableTextField(){
+        let otpCount = currentOtp.count
+        let selectTag = 220 + ((otpCount + 1 <= numberOfDigits) ? otpCount + 1 : otpCount)
+        for  vu in self.subviews{
+            if let textField = vu as? UITextField{
+                if textField.tag == selectTag {
+                    textField.isEnabled = true
+                }else {
+                    textField.isEnabled = allowsSelection
                 }
             }
         }
-        else{
-            self.endEditing(true)
-        }
-        
     }
     
+    //MARK: Method to reload contents
+    public func reloadFields() -> Void {
+        addTetxFields()
+        enableTextField()
+    }
     
-//MARK: Clear text
- public func clearOTPText() -> Void {
+    //MARK: TOUCH EVENT
+    @objc private func touch() -> Void {
+        if allowsSelection{ return }
+        self.edit(shouldEdit: true)
+    }
+    
+    private func edit(shouldEdit:Bool) -> Void {
+        if shouldEdit{
+            selectTextField()
+        }
+        else{
+            endEditing(true)
+        }
+    }
+    
+    private func selectTextField(){
+        let otpCount = currentOtp.count
+        let selectTag = 220 + ((otpCount + 1 <= numberOfDigits) ? otpCount + 1 : otpCount)
+
+        if let vu = self.viewWithTag(selectTag) as? UITextField{
+            if !vu.isFirstResponder {
+                vu.becomeFirstResponder()
+            }
+        }
+    }
+    
+   @discardableResult override public func becomeFirstResponder() -> Bool{
+        defer{
+            selectTextField()
+        }
+       return super.becomeFirstResponder()
+    }
+    @discardableResult override public func resignFirstResponder() -> Bool{
+        
+        return super.resignFirstResponder()
+    }
+    //MARK: Clear text
+    public func clearOTPText() -> Void {
         for n in 1...numberOfDigits{
             let txtFld = self.viewWithTag(220+n) as! UITextField?
             txtFld?.text = ""
+            txtFld?.isEnabled =  n == 1 ? true : allowsSelection
         }
-//        self.touch()
     }
     
+    //MARK: UITextFieldDelegate
+    public func textFieldDidBeginEditing(_ textField: UITextField) { }
+    public func textFieldDidEndEditing(_ textField: UITextField) { }
     
-//MARK: UITextFieldDelegate
-   public func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-    }
-    
-    public func textFieldDidEndEditing(_ textField: UITextField) {
-        NSLog("textfield end editing")
-    }
-    
-   public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return false
     }
-    
-   public func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        NSLog("textfield should clear")
+    public func textFieldShouldClear(_ textField: UITextField) -> Bool {
         return true
     }
-    
-   public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
         
-
         if string == " "{
             return false
         }
@@ -219,13 +192,11 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
         let endIn = str.index(startIn, offsetBy: range.length)
         
         let resultStr = str.replacingCharacters(in:(startIn..<endIn) , with: string)
-       
-
-        switch (str.count , resultStr.count )
-        {
+        
+        switch (str.count , resultStr.count ){
             //User enters text when SELECTED textfield is already full THEN REPLACE TEXT : IN CASE OF ALLOWS SELECTION VAR
             case let(count,resultCount) where count == 1 && resultCount > 1 :
-            
+                
                 if string.count == 1{
                     textField.text = string
                     let resp = self.viewWithTag(textField.tag + 1 )
@@ -234,37 +205,25 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
                         self.sendActions(for: .valueChanged)
                     }
                     else{
-                        textField.endEditing(true)
                         //send call back
                         if let del = self.delegate{
-                            del.otpField?(field: self, didEnter: currentOtp)
+                            del.otpField(field: self, didEnter: currentOtp)
                         }
                     }
                 }
                 break
             
-          //Deletes a text
+            //Deletes a text
             case let(count,resultCount) where count == 1 && resultCount == 0 :
-                NSLog("OTPField : Deletes a text current str : \(str) , result str : \(resultStr)")
-
                     textField.text = resultStr
-//                    textField.isEnabled = self.allowsSelection
-//                
-//                let nxtResponderView = self.viewWithTag(textField.tag - 1 )
-//                if let nextTextField = nxtResponderView as! UITextField? {
-//                    nextTextField.isEnabled = true
-//                    nextTextField.becomeFirstResponder()
-//                    self.sendActions(for: .valueChanged)
-//                }
                 break
             
             case let(count,resultCount) where count == 0 && resultCount == 1 :
-                NSLog("OTPField : Added a text current str : \(str) , result str : \(resultStr)")
                 
-                    textField.text = resultStr
+                textField.text = resultStr
                 
                 let nxtResponderView = self.viewWithTag(textField.tag + 1 )
-                if let nextTextField = nxtResponderView as! UITextField? {
+                if let nextTextField = nxtResponderView as? UITextField {
                     nextTextField.isEnabled = true
                     nextTextField.becomeFirstResponder()
                     textField.isEnabled = self.allowsSelection
@@ -275,43 +234,36 @@ public class SDOtpField: UIControl,UITextFieldDelegate {
                     textField.isEnabled = true
                     //send call back : OTP FILLED
                     if let del = self.delegate{
-                        del.otpField?(field: self, didEnter: currentOtp)
+                        del.otpField(field: self, didEnter: currentOtp)
                     }
                 }
                 break
-                
-                default:
-                    NSLog("OTPField : Default condition for OTPField current str : \(str) , result str : \(resultStr)")
-                
+            
+            default: break
+            
         }
         
         textField.textAlignment = NSTextAlignment.center
-
+        
         return false
     }
     
-//MARK: textField event delete
+    //MARK: textField event delete
     @objc  private func txtFieldValueChnged(sender:UITextField){
-        NSLog("Callback for text value change")
-        
         if let text = sender.text{
             if text == ""{
                 let resp = self.viewWithTag(sender.tag - 1 )
                 
                 if resp != nil{
                     sender.isEnabled = allowsSelection
-                    
                     let prevText = resp as! UITextField
                     prevText.text = ""
                     prevText.isEnabled = true
                     prevText.becomeFirstResponder()
-                    
                     self.sendActions(for: .valueChanged)
-                  }
+                }
             }
         }
     }
-    
-    
     
 }
