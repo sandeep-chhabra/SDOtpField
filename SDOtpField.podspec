@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SDOtpField'
-  s.version          = '0.2.0'
+  s.version          = '1.0.0'
   s.summary          = 'SDOtpField is a segmented text field with limited number of input characters.'
   s.swift_version    = '4.2'
 # This description is used to generate tags and improve search results.
